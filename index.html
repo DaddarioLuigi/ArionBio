@@ -308,6 +308,21 @@
             }, 1000);
         });
     });
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('mail') === 'success') {
+            const successBar = document.createElement('div');
+            successBar.style.backgroundColor = '#e9439a';
+            successBar.style.color = '#fff';
+            successBar.style.padding = '10px';
+            successBar.style.textAlign = 'center';
+            successBar.textContent = 'Messaggio inviato con successo!';
+            document.body.insertBefore(successBar, document.body.firstChild);
+        }
+    });
+
+
 </script>
 </body>
 
