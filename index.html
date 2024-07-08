@@ -215,7 +215,7 @@
                     <div id="preventivo" class="bg-white rounded p-4 p-sm-5 wow fadeIn" data-wow-delay="0.5s">
                         <h1 style="color: #e9439a;" class="display-5 text-center mb-5">Si ricercano zone libere</h1>
                         <div class="row g-3">
-                            <form action="https://formspree.io/f/xyzgyagw" method="post">
+                            <form id="my-form" action="https://formspree.io/f/xyzgyagw" method="post">
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <div class="form-floating">
@@ -250,6 +250,11 @@
                                     </div>
                                     <div class="col-12 text-center">
                                         <button style="background-color: #e9439a; border-color:#e9439a !important;" class="btn btn-primary py-3 px-4" type="submit">Invia</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <p id="my-form-status"></p>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
