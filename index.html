@@ -219,33 +219,33 @@
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control bg-light border-0" id="gname" name="gname" placeholder="Nome" required>
-                                            <label for="gname">Nome</label>
+                                            <input type="text" class="form-control bg-light border-0" id="nome" name="nome" placeholder="Nome" required>
+                                            <label for="nome">Nome</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control bg-light border-0" id="gsurname" name="gsurname" placeholder="Cognome" required>
-                                            <label for="gname">Cognome</label>
+                                            <input type="text" class="form-control bg-light border-0" id="cognome" name="cognome" placeholder="Cognome" required>
+                                            <label for="cognome">Cognome</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control bg-light border-0" id="gmail" name="gmail" placeholder="Email" required>
-                                            <label for="gmail">Email</label>
+                                            <input type="email" class="form-control bg-light border-0" id="email" name="email" placeholder="Email" required>
+                                            <label for="email">Email</label>
                                         </div>
                                     </div>
                     
                                     <div class="col-sm-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control bg-light border-0" id="cage" name="cage" placeholder="Eta">
-                                            <label for="cage">Servizio</label>
+                                            <input type="text" class="form-control bg-light border-0" id="servizio" name="servizio" placeholder="Eta">
+                                            <label for="servizio">Servizio</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control bg-light border-0" placeholder="Inserisci un messaggio" id="message" name="message" style="height: 100px" required></textarea>
-                                            <label for="message">Messaggio</label>
+                                            <textarea class="form-control bg-light border-0" placeholder="Inserisci un messaggio" id="messaggio" name="messaggio" style="height: 100px" required></textarea>
+                                            <label for="messaggio">Messaggio</label>
                                         </div>
                                     </div>
                                     <div class="col-12 text-center">
@@ -286,19 +286,19 @@
         }
       }).then(response => {
         if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
+          status.innerHTML = "Messaggio inviato con successo";
           form.reset()
         } else {
           response.json().then(data => {
             if (Object.hasOwn(data, 'errors')) {
               status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
             } else {
-              status.innerHTML = "Oops! There was a problem submitting your form"
+              status.innerHTML = "Oops! C'è stato un problema con l'invio del messaggio"
             }
           })
         }
       }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
+        status.innerHTML = "Oops! C'è stato un problema con l'invio del messaggi"
       });
     }
     form.addEventListener("submit", handleSubmit)
